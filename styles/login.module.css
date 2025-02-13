@@ -1,0 +1,59 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.contentLeft{
+    width: 40vw;
+    height: 100vh;
+    background-image: url("../public/backgroun.png");
+    background-position: center center;
+    background-size:cover;
+}
+
+.contentright{
+    width: 60vw;
+    height: 100vh;
+    background-color:#0C1316;
+    background-position: center center;
+    background-size:cover;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 45px;
+
+}
+
+.title{
+    font-size: 70px;
+    font-weight: 700;
+    color: white;
+
+}
+
+.soustitre{
+    color: white;
+    font-size: 25px;
+    font-weight: 300;
+
+}
+
+.signup{
+width: 200px; 
+height: 50px;
+color:blue ;
+border-radius: 12px;
+border:1px solid grey;
+
+}
+
+.signin{
+    width: 200px; 
+    height: 50px;
+    color:blue ;
+    border-radius: 12px;
+    border:1px solid grey;
+    }
+.alreadyaccount{
+    color: white;
+}
