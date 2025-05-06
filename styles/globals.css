@@ -8,3 +8,38 @@ body {
 * {
   box-sizing: border-box;
 }
+
+h2 {
+  font-size: 68px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 14px;
+}
+
+h2, h3, p, span, button {
+  color: white;
+}
+
+input, textarea {
+  color: black;
+}
+
+.ant-modal-header {
+  background-color: #15202b;
+  border-radius: 10px 10px 0px 0px;
+  border: none;
+}
+
+.ant-modal-content {
+  background-color: #15202b;
+  border-radius: 10px;
+}
+
+textarea::placeholder {
+  color: rgb(114, 131, 148);
+}

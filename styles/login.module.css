@@ -1,59 +1,72 @@
-.container{
+@font-face {
+    font-family: "Mont";
+    src: url("/fonts/Mont-Heavy.otf");
+  }
+  
+  .container {
+    height: 100vh;
     width: 100vw;
-    height: 100vh;
     display: flex;
-}
-
-.contentLeft{
+  }
+  
+  .leftSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     width: 40vw;
+    background-image: url('https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png');
+  }
+  
+  .rightSection {
     height: 100vh;
-    background-image: url("../public/backgroun.png");
-    background-position: center center;
-    background-size:cover;
-}
-
-.contentright{
     width: 60vw;
-    height: 100vh;
-    background-color:#0C1316;
-    background-position: center center;
-    background-size:cover;
+    padding: 30px;
+    background-color: #15202b;
+    font-family: "Mont";
+  }
+  
+  .signUp {
     display: flex;
-    flex-direction: column;
-    padding-inline: 45px;
-
-}
-
-.title{
-    font-size: 70px;
-    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 200px;
+    margin-bottom: 15px;
+    background-color: #409BF1;
+    border-radius: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .signUp:hover {
+    background-color: #3384cf;
+  }
+  
+  .signIn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 200px;
+    border: 1px rgb(114, 131, 148) solid;
+    border-radius: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .signIn:hover {
+    background-color: #24374a;
+  }
+  
+  .signUpText {
     color: white;
-
-}
-
-.soustitre{
-    color: white;
-    font-size: 25px;
-    font-weight: 300;
-
-}
-
-.signup{
-width: 200px; 
-height: 50px;
-color:blue ;
-border-radius: 12px;
-border:1px solid grey;
-
-}
-
-.signin{
-    width: 200px; 
-    height: 50px;
-    color:blue ;
-    border-radius: 12px;
-    border:1px solid grey;
-    }
-.alreadyaccount{
-    color: white;
-}
+  }
+  
+  .title {
+    margin-top: 50px;
+  }

@@ -1,36 +1,43 @@
-import React, { useState } from 'react'
-import useState from 'react'
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../reducers/user';
+import Image from 'next/image';
+import styles from '../styles/SignIn.module.css';
 
-function signin() {
-    const[username,setUsername]=useState('')
-    const[password,setPassword]=useState('')//les useState pour recuperer les donées que l'user met dans le input
+function SignIn() {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.value);
 
-    const clicksignin=()=>{
-      fetch('http://localhost:3002/users/signin',{
-        method:'POST',
-        headers:{'Content-Type':'Application/json'},
-        body:JSON.stringify({username,password})
-        .then(response=>response.json)
-        .then(data=>{
-          if(data.data){
-            //usedispatch
-          }
-        })
+  // Redirect to /home if logged in
+  const router = useRouter();
+  if (user.token) {
+    router.push('/home');
+  }
 
-      })
-    }
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
+  const handleSubmit = () => {
+    fetch('http://localhost:3002/users/signin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password }),
+    }).then(response => response.json())
+      .then(data => {
+        data.result && dispatch(login({ token: data.token, firstName: data.firstName, username: data.username }));
+      });
+  };
 
   return (
-    <div>
-        <input require onChange={(e)=>setUsername(e.target.value)} value={username} type='text' className={styles.username} placeholder='username' ></input>
-        
-        <input  require onChange={(e)=>setPassword(e.target.value)} value={password} type='password' className={styles.firstname}placeholder='password'></input>
-        <button onClick={()=>clicksignin()} className={styles.signin} >Sign In</button>
-         <p className={styles.texte}>Create your Hackatweet account</p>
-      
+    <div className={styles.container}>
+      <Image src="/logo.png" alt="Logo" width={50} height={50} />
+      <h3 className={styles.title}>Connect to Hackatweet</h3>
+      <input type="text" className={styles.input} onChange={(e) => setUsername(e.target.value)} value={username} placeholder="Username" />
+      <input type="password" className={styles.input} onChange={(e) => setPassword(e.target.value)} value={password} placeholder="Password" />
+      <button className={styles.button} onClick={() => handleSubmit()}>Sign in</button>
     </div>
-  )
+  );
 }
 
-export default signin
+export default SignIn;
