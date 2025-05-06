@@ -9,6 +9,8 @@ import useState from 'react'
 import Image from 'next/image';
 
 function Login() {
+
+  
     const [singInPopover, setSignInPopover]=useState(false)
     const [singUpPopover,setSignUpPopover]=useState(false)
 
@@ -34,6 +36,7 @@ function Login() {
          <input type='password' className={styles.firstname}placeholder='password'></input>
          <button className={styles.signup}>Sign In</button>
          <p className={styles.texte}>Create your Hackatweet account</p>
+
 
         </Popover>
        
